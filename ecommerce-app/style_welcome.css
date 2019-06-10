@@ -1,0 +1,86 @@
+/* General*/
+html{
+	background: url('ecommerce.jpg');
+	background-size: cover;
+}
+
+html, body{
+	margin: 0;
+	padding: 0;
+}
+/* Nav bar*/
+
+nav ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	background: #444;
+}
+
+nav ul li{
+	display: inline-block;
+	font-size: 1.1em;
+	padding: 12px;
+	font-family: "calibri";
+	font-weight: bold;
+}
+
+nav a{
+	text-decoration: none;
+	color: #fff;
+	padding: 12px;
+}
+
+nav a:hover{
+	background: #188C9C;
+	color:#fff;
+}
+/* Content*/
+
+#content{
+	color: #fff;
+	margin-top: 200px;
+	width: 100%;
+	text-align: center;
+}
+
+#content h1{
+	font-size: 80px;
+	font-weight: normal;
+	margin-bottom: 10px;
+}
+
+#content h4{
+	font-weight: normal;
+	margin-top: 0;
+	letter-spacing: 8px;
+}
+
+footer{
+	background: #000;
+	color: #fff;
+	padding: 18px;
+	margin-top: 182px;
+	position: absolute;
+	bottom: 0;
+	width: 97.5%;
+	height: 20px;
+}
+
+.footerLeft .footerRight{
+	display: inline-block;
+}
+
+.footerLeft a{
+	color: #bbb;
+	text-decoration: none;
+	padding: 5px;
+}
+
+.footerLeft a:hover{
+	color: #fff;
+}
+
+.footerRight{
+	float: right;
+}
