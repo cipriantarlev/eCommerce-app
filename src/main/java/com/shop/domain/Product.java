@@ -3,14 +3,23 @@ package com.shop.domain;
 
 import java.math.BigDecimal;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
+import javax.persistence.OneToOne;
 
 import com.shop.domain.enums.ProductType;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@NoArgsConstructor
 public class Product {
 	
 	@Id
@@ -32,4 +41,22 @@ public class Product {
 	@JoinColumn(name = "stoc_id")
 	private Stoc stoc;
 
+	public Product(Long id, String productName, ProductType productType, BigDecimal price, byte[] image, Stoc stoc) {
+		super();
+		this.id = id;
+		this.productName = productName;
+		this.productType = productType;
+		this.price = price;
+		this.image = image;
+		this.stoc = stoc;
+	}
+
+	public Product(String productName, ProductType productType, BigDecimal price, byte[] image, Stoc stoc) {
+		super();
+		this.productName = productName;
+		this.productType = productType;
+		this.price = price;
+		this.image = image;
+		this.stoc = stoc;
+	}
 }

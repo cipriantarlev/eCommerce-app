@@ -4,15 +4,15 @@
 <html>
 <head>
 	<title>Welcome</title>
-	<link rel="stylesheet" href="D:\Eclipse\eCommerce-app-Cip\ecommerce-app\style_welcome.css">
+	<link rel="stylesheet" href="css/style_welcome.css">
 </head>
 <body>
 
 	<nav>
 		<ul>
-			<li><a href="#">Home</a></li>
+			<li><a href="/">Home</a></li>
 			<li><a href="#">About</a></li>
-			<li style="float: right;"><a href="#">Login</a></li>
+			<li style="float: right;"><a href="/login">Login/Register</a></li>
 		</ul>
 	</nav>
 
@@ -23,8 +23,8 @@
 	
 	<footer>
 		<div class="footerLeft">
-			<a href="#">Privacy</a></li>
-			<a href="#">Contact us</a></li>
+			<a href="#">Privacy</a>
+			<a href="#">Contact us</a>
 		</div>
 
 		<div class="footerRight">

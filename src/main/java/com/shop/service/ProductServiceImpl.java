@@ -13,11 +13,36 @@ import com.shop.repository.ProductRepo;
 public class ProductServiceImpl implements ProductService {
 
 	@Autowired
-	private ProductRepo repo;
+	private ProductRepo productRepo;
 	
 	@Override
 	public List<Product> getProductsByType(ProductType type) {
-		return repo.getProductsByType(type);
+		return productRepo.getProductsByType(type);
+	}
+
+	@Override
+	public List<Product> findAllProduct() {
+		return productRepo.findAll();
+	}
+
+	@Override
+	public Product findProductById(Long id) {
+		return productRepo.findById(id).get();
+	}
+
+	@Override
+	public Product updateProduct(Product product) {
+		return productRepo.save(product);
+	}
+
+	@Override
+	public Product insertProduct(Product product) {
+		return productRepo.save(product);
+	}
+
+	@Override
+	public void deleteProductById(Long id) {
+		productRepo.deleteById(id);
 	}
 
 }
