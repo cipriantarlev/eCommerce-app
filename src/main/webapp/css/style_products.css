@@ -69,7 +69,11 @@ footer{
 	background: #000;
 	color: #fff;
 	padding: 18px;
-	margin-top: 250px;
+	margin-top: 182px;
+	position: absolute;
+	bottom: 0;
+	width: 97%;
+	height: 20px;
 	
 }
 
