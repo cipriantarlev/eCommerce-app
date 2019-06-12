@@ -1,8 +1,10 @@
 package com.shop.controller;
 
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
-@RestController
+@Controller
 public class ProductController {
 //
 //	@Autowired
@@ -13,4 +15,8 @@ public class ProductController {
 //		return service.getProductsByType(ProductType.valueOf(type));
 //	}
 
+	@RequestMapping(value = "/products", method = RequestMethod.GET)
+	public String showLoginPage() {
+		return "products";
+	}
 }

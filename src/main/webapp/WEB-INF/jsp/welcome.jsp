@@ -4,7 +4,7 @@
 <html>
 <head>
 	<title>Welcome</title>
-	<link rel="stylesheet" href="css/style_welcome.css">
+	<link rel="stylesheet" href="/css/style_welcome.css" type="text/css">
 </head>
 <body>
 
@@ -12,7 +12,9 @@
 		<ul>
 			<li><a href="/">Home</a></li>
 			<li><a href="#">About</a></li>
-			<li style="float: right;"><a href="/login">Login/Register</a></li>
+			<li><a href="/products">Our Products</a></li>
+			<li style="float: right;"><a href="/register">Register</a></li>
+			<li style="float: right;"><a href="/login">Sign in</a></li>
 		</ul>
 	</nav>
 

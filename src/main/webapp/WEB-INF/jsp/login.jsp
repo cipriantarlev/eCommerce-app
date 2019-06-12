@@ -15,7 +15,7 @@
 			<input type="text" name="" placeholder="Enter Username">
 			<p>Password</p>
 			<input type="password" name="" placeholder="Enter Password">
-			<input type="submit" name="" value="Login"> <a href="#">Don't
+			<input type="submit" name="" value="Login"> <a href="/register">Don't
 				have an account?</a>
 		</form>
 	</div>

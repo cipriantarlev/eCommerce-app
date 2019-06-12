@@ -1,0 +1,92 @@
+html{
+	background: url('ecommerce.jpg');
+	background-size: cover;
+}
+
+html, body{
+	margin: 0;
+	padding: 0;
+}
+
+nav ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	background: #444;
+}
+
+nav ul li{
+	display: inline-block;
+	font-size: 1.1em;
+	padding: 12px;
+	font-family: "calibri";
+	font-weight: bold;
+}
+
+nav a{
+	text-decoration: none;
+	color: #fff;
+	padding: 12px;
+}
+
+nav a:hover{
+	background: #188C9C;
+	color:#fff;
+}
+table caption{
+	font-family: "calibri";
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #F0FFFF;
+}
+
+table{
+	border-collapse: collapse;
+	margin:8em auto;
+}
+
+table th{
+	text-align: left;
+	background-color: #444;
+	color: #FFF;
+	padding: 4px 30px 4px 8px;
+}
+
+table td{
+	border: 1px solid #e3e3e3;
+	padding: 4px 8px;
+}
+
+table tr:nth-child(odd) td{
+	background-color:#DCDCDC;
+}
+
+table tr:nth-child(even) td{
+	background-color:#F0F8FF;
+}
+
+footer{
+	background: #000;
+	color: #fff;
+	padding: 18px;
+	margin-top: 250px;
+	
+}
+
+.footerLeft .footerRight{
+	display: inline-block;
+}
+
+.footerLeft a{
+	color: #bbb;
+	text-decoration: none;
+	padding: 5px;
+}
+
+.footerLeft a:hover{
+	color: #fff;
+}
+
+.footerRight{
+	float: right;
+}
