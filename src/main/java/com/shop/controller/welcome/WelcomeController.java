@@ -1,14 +1,14 @@
-package com.shop.controller;
+package com.shop.controller.welcome;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class RegisterController {
+public class WelcomeController {
 
-	@RequestMapping(value = "/register", method = RequestMethod.GET)
-	public String showLoginPage() {
-		return "register";
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String showWelcomePage() {
+		return "welcome";
 	}
 }
