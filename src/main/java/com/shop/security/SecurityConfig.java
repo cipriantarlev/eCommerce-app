@@ -9,7 +9,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 @Configuration
 @EnableWebSecurity
-<<<<<<< HEAD
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	
 	@Autowired
@@ -27,22 +26,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			.formLogin()
 			//.loginPage("/login")
 			.defaultSuccessUrl("/homepage", true)
-=======
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
-
-	@Autowired
-	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-		auth.inMemoryAuthentication()
-				.withUser("user").password("{noop}password").roles("USER");
-	}
-	
-	protected void configure(HttpSecurity http) throws Exception{
-		http.authorizeRequests()
-				.anyRequest().authenticated()
-				.and()
-			.formLogin()
->>>>>>> 2eadb649f4d0b925d55bf6c45517df0b3d6b52ed
-				.and()
+			.and()
 			.httpBasic();
 	}
 }
