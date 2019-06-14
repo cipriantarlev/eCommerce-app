@@ -33,6 +33,17 @@ nav a:hover{
 	background: #188C9C;
 	color:#fff;
 }
+
+#welcome{
+	text-decoration: none;
+	color: #fff;
+	background: transparent;
+	border: 0;
+	font-size: 1.2em;
+	font-family: "calibri";
+	font-weight: bold;
+	
+}
 table caption{
 	font-family: "calibri";
 	font-size: 1.1em;

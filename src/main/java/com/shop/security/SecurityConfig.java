@@ -24,7 +24,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 				.antMatchers("/homepage/**").hasRole("USER")
 				.and()
 			.formLogin()
-			//.loginPage("/login")
+			.loginPage("/login")
 			.defaultSuccessUrl("/homepage", true)
 			.and()
 			.httpBasic();

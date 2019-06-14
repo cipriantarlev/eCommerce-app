@@ -36,6 +36,17 @@ nav a:hover{
 	color:#fff;
 }
 
+#welcome{
+	text-decoration: none;
+	color: #fff;
+	background: transparent;
+	border: 0;
+	font-size: 1.2em;
+	font-family: "calibri";
+	font-weight: bold;
+	
+}
+
 form input[type=submit]{
 	text-decoration: none;
 	color: #fff;

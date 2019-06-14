@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="/css/style_register.css">
 </head>
 <body>
-	<div class="loginbox">
+	<div class="loginbox" style="height: 460px">
 	<img src="/css/avatar.jpg" class="avatar">
 		<h1>Create Account</h1>
 		<form>
@@ -18,8 +18,10 @@
 			<input type="password" name="" placeholder="Enter Password">
 			<p>Email</p>
 			<input type="text" name="" placeholder="Enter Email">
-			<input type="submit" name="" value="Register">
+			<input type="submit" name="" value="Register"> 
+			<a href="/">Back to welcome page</a>
 		</form>
+		
 	</div>
 </body>
 </html>

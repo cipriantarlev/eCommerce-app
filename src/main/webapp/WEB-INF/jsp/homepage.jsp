@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +19,7 @@
 						name="${_csrf.parameterName}" value="${_csrf.token}" />
 				</form>
 			</li>
+			<li id="welcome"style="float: right;">Welcome, <b><sec:authentication property="principal.username" /></b></li>
 		</ul>
 	</nav>
 
