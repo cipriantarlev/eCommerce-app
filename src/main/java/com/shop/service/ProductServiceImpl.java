@@ -26,50 +26,30 @@ public class ProductServiceImpl implements ProductService {
 	private ProductEntityToDTOMapper productEntityToDTOMapper;
 
 	@Override
-	public List<Product> getProductByType(ProductType type) {
-		return productRepo.getProductsByType(type);
-	}
-
-	@Override
-	public List<Product> findAllProduct() {
-		return productRepo.findAll();
-	}
-
-	@Override
-	public Product findProductById(Long id) {
-		return productRepo.findById(id).get();
-	}
-
-	@Override
-	public Product updateProduct(Product product) {
-		return productRepo.save(product);
-	}
-
-	@Override
-	public Product insertProduct(Product product) {
-		return productRepo.save(product);
-	}
-
-	@Override
-	public void deleteProductById(Long id) {
-		productRepo.deleteById(id);
-	}
-
-	@Override
-	public void createProduct(ProductDTO productDTO) {
+	public void createProduct(ProductDTO productDTO) {   //pe baza de constructor sau Product Mode
 		Product product = productDTOToEntityMapper.convert(productDTO);
 		productRepo.save(product);
 	}
 
 	@Override
-	public List<ProductDTO> getAllProducts() {
-		return productRepo.findAll().stream().map(productEntityToDTOMapper::convert).collect(Collectors.toList());
+	public List<ProductDTO> getAllProducts() {  //find all
+		return productRepo.findAll()
+						  .stream()
+						  .map(productEntityToDTOMapper::convert)
+						  .collect(Collectors.toList());
 	}
 
 	@Override
-	public List<ProductDTO> getProductsByType(ProductType type) {
-		return productRepo.getProductsByType(type).stream().map(productEntityToDTOMapper::convert)
-				.collect(Collectors.toList());
+	public List<ProductDTO> getProductByType(ProductType type) { // product find by type
+		return productRepo.getProductsByType(type)
+						  .stream()
+						  .map(productEntityToDTOMapper::convert)
+						  .collect(Collectors.toList());
+	}
+
+	@Override
+	public ProductDTO getProductById(String id) {
+		return productEntityToDTOMapper.convert(productRepo.getProductsById(id)); // product find by id
 	}
 
 }
