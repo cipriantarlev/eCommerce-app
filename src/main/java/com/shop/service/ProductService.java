@@ -4,9 +4,10 @@ import java.util.List;
 
 import com.shop.domain.Product;
 import com.shop.domain.enums.ProductType;
+import com.shop.domain.model.ProductDTO;
 
 public interface ProductService {
-	List<Product> getProductsByType(ProductType type);
+	List<Product> getProductByType(ProductType type);
 
 	List<Product> findAllProduct();
 
@@ -17,4 +18,10 @@ public interface ProductService {
 	Product insertProduct(Product product);
 
 	void deleteProductById(Long id);
+
+	void createProduct(ProductDTO product);
+
+	List<ProductDTO> getAllProducts();
+
+	List<ProductDTO> getProductsByType(ProductType type);
 }

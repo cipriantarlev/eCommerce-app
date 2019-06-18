@@ -12,6 +12,6 @@ import com.shop.domain.enums.ProductType;
 @Repository
 public interface ProductRepo extends JpaRepository<Product, Long> {
 
-	@Query("select p from Product p where p.productType = ?1")
+	@Query("SELECT p FROM Product p WHERE p.type = ?1")
 	List<Product> getProductsByType(ProductType type);
 }

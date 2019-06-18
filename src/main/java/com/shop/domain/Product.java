@@ -14,23 +14,27 @@ import javax.persistence.OneToOne;
 
 import com.shop.domain.enums.ProductType;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class Product {
 	
 	@Id
-	private Long id;
+	private String id;
 	
 	@Column(name = "name")
-	private String productName;
+	private String name;
 	
 	@Column(name = "type")
 	@Enumerated(EnumType.STRING)
-	private ProductType productType;
+	private ProductType type;
 	
 	private BigDecimal price;
 	
@@ -40,23 +44,4 @@ public class Product {
 	@OneToOne
 	@JoinColumn(name = "stoc_id")
 	private Stoc stoc;
-
-	public Product(Long id, String productName, ProductType productType, BigDecimal price, byte[] image, Stoc stoc) {
-		super();
-		this.id = id;
-		this.productName = productName;
-		this.productType = productType;
-		this.price = price;
-		this.image = image;
-		this.stoc = stoc;
-	}
-
-	public Product(String productName, ProductType productType, BigDecimal price, byte[] image, Stoc stoc) {
-		super();
-		this.productName = productName;
-		this.productType = productType;
-		this.price = price;
-		this.image = image;
-		this.stoc = stoc;
-	}
 }

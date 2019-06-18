@@ -6,12 +6,16 @@ import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class Stoc {
 	
 	@Id
@@ -22,15 +26,4 @@ public class Stoc {
 	@OneToOne(mappedBy="stoc")
 	@JsonIgnore
 	private Product prodcut;
-
-	public Stoc(long id, Integer stoc) {
-		super();
-		this.id = id;
-		this.stoc = stoc;
-	}
-
-	public Stoc(long id) {
-		super();
-		this.id = id;
-	}
 }

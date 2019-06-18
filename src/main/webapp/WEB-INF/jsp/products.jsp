@@ -1,14 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Products</title>
-	<link rel="stylesheet" href="/css/style_products.css" type="text/css"/>
+<link rel="stylesheet" href="/css/style_products.css" type="text/css" />
 </head>
 <body>
-<nav>
+	<nav>
 		<ul>
 			<li><a href="/">Home</a></li>
 			<li><a href="#">About</a></li>
@@ -18,48 +20,33 @@
 		</ul>
 	</nav>
 	<table align="center">
-	<caption>Our Products</caption>
+		<caption>Our Products</caption>
+		<thead>
 		<tr>
-			<th style="width:50%">Name</th>
-			<th style="width:25%">Type</th>
+			<th style="width: 50%">Name</th>
+			<th style="width: 25%">Type</th>
 			<th>Price</th>
 			<th>Stock</th>
 		</tr>
-		<tr>
-			<td>samsung</td>
-			<td>3000</td>
-			<td>150</td>
-			<td>150</td>
-		</tr>
-		<tr>
-			<td>samsung</td>
-			<td>3000</td>
-			<td>150</td>
-			<td>150</td>
-		</tr>
-		<tr>
-			<td>samsung</td>
-			<td>3000</td>
-			<td>150</td>
-			<td>150</td>
-		</tr>
-		<tr>
-			<td>samsung</td>
-			<td>3000</td>
-			<td>150</td>
-			<td>150</td>
-		</tr>
+		</thead>
+		<tbody>
+		 <c:forEach items="${products}" var="product">
+            <tr>
+                <td>${product.name}</td>
+                <td>${product.type}</td>
+                <td>${product.price} RON</td>
+                <td>${product.stoc}</td>
+            </tr>
+        </c:forEach>
+		</tbody>
 	</table>
 
-<footer>
+	<footer>
 		<div class="footerLeft">
-			<a href="#">Privacy</a>
-			<a href="#">Contact us</a>
+			<a href="#">Privacy</a> <a href="#">Contact us</a>
 		</div>
 
-		<div class="footerRight">
-			All rights Reserver &copy 2019
-		</div>
+		<div class="footerRight">All rights Reserver &copy 2019</div>
 	</footer>
 
 </body>

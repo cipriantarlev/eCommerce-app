@@ -1,12 +1,16 @@
 package com.shop.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.shop.domain.Product;
 import com.shop.domain.enums.ProductType;
+import com.shop.domain.model.ProductDTO;
+import com.shop.mapper.ProductDTOToEntityMapper;
+import com.shop.mapper.ProductEntityToDTOMapper;
 import com.shop.repository.ProductRepo;
 
 @Service
@@ -15,8 +19,14 @@ public class ProductServiceImpl implements ProductService {
 	@Autowired
 	private ProductRepo productRepo;
 	
+	@Autowired
+	private ProductDTOToEntityMapper productDTOToEntityMapper;
+
+	@Autowired
+	private ProductEntityToDTOMapper productEntityToDTOMapper;
+
 	@Override
-	public List<Product> getProductsByType(ProductType type) {
+	public List<Product> getProductByType(ProductType type) {
 		return productRepo.getProductsByType(type);
 	}
 
@@ -43,6 +53,23 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public void deleteProductById(Long id) {
 		productRepo.deleteById(id);
+	}
+
+	@Override
+	public void createProduct(ProductDTO productDTO) {
+		Product product = productDTOToEntityMapper.convert(productDTO);
+		productRepo.save(product);
+	}
+
+	@Override
+	public List<ProductDTO> getAllProducts() {
+		return productRepo.findAll().stream().map(productEntityToDTOMapper::convert).collect(Collectors.toList());
+	}
+
+	@Override
+	public List<ProductDTO> getProductsByType(ProductType type) {
+		return productRepo.getProductsByType(type).stream().map(productEntityToDTOMapper::convert)
+				.collect(Collectors.toList());
 	}
 
 }

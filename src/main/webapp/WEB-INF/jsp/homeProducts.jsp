@@ -1,5 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,41 +22,30 @@
 						name="${_csrf.parameterName}" value="${_csrf.token}" />
 				</form>
 			</li>
-			<li id="welcome" style="float: right;">Welcome, <b><sec:authentication property="principal.username" /></b></li>
+			<li id="welcome" style="float: right;">Welcome, <b><sec:authentication
+						property="principal.username" /></b></li>
 		</ul>
 	</nav>
 	<table align="center">
 		<caption>Our Products</caption>
-		<tr>
-			<th style="width: 50%">Name</th>
-			<th style="width: 25%">Type</th>
-			<th>Price</th>
-			<th>Stock</th>
-		</tr>
-		<tr>
-			<td>samsung</td>
-			<td>3000</td>
-			<td>150</td>
-			<td>150</td>
-		</tr>
-		<tr>
-			<td>samsung</td>
-			<td>3000</td>
-			<td>150</td>
-			<td>150</td>
-		</tr>
-		<tr>
-			<td>samsung</td>
-			<td>3000</td>
-			<td>150</td>
-			<td>150</td>
-		</tr>
-		<tr>
-			<td>samsung</td>
-			<td>3000</td>
-			<td>150</td>
-			<td>150</td>
-		</tr>
+		<thead>
+			<tr>
+				<th style="width: 50%">Name</th>
+				<th style="width: 25%">Type</th>
+				<th>Price</th>
+				<th>Stock</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach items="${products}" var="product">
+				<tr>
+					<td>${product.name}</td>
+					<td>${product.type}</td>
+					<td>${product.price} RON</td>
+					<td>${product.stoc}</td>
+				</tr>
+			</c:forEach>
+		</tbody>
 	</table>
 
 	<footer>
