@@ -54,15 +54,14 @@ public class ProductServiceImpl implements ProductService {
 	public void deleteProductById(String id) {
 		productRepo.deleteById(id);
 	}
-
-	@Override
-	public void createProduct(ProductDTO productDTO) {
+	public void createProduct(ProductDTO productDTO) {   //pe baza de constructor sau Product Mode
 		Product product = productDTOToEntityMapper.convert(productDTO);
 		productRepo.save(product);
+
 	}
 
 	@Override
-	public List<ProductDTO> getAllProducts() {
+	public List<ProductDTO> getAllProducts() {  //find all
 		return productRepo.findAll()
 						  .stream()
 						  .map(productEntityToDTOMapper::convert)
@@ -80,5 +79,4 @@ public class ProductServiceImpl implements ProductService {
 	public ProductDTO getProductsById(String id) {
 		return productRepo.findById(id).map(productEntityToDTOMapper::convert).get();
 	}
-
 }

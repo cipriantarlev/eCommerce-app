@@ -1,5 +1,6 @@
 package com.shop.controller.homepages;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -8,10 +9,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.shop.service.ProductService;
 
+
 @Controller
 @RequestMapping(value = "product")
 public class HomeProductController {
-//
+
 	@Autowired
 	private ProductService service;
 //
@@ -25,11 +27,19 @@ public class HomeProductController {
 //		return "homeProducts";
 //	}
 
+
 //	@GetMapping("/homepage-products")
 //	public String listAllProducts(ModelMap model) {
 //		List<ProductDTO> allProducts = service.getAllProducts();
 //		model.put("products", allProducts);
 //		return "homeProducts";
+
+//	@RequestMapping(method = RequestMethod.GET)
+//	public String listAllProducts(ModelMap model) {
+//		List<ProductDTO> allProducts = service.getAllProducts();
+//		model.put("products", allProducts);
+//		return "product/index";
+
 //	}
 
 	@RequestMapping(method = RequestMethod.GET)

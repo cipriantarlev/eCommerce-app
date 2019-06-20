@@ -7,6 +7,7 @@ import com.shop.domain.enums.ProductType;
 import com.shop.domain.model.ProductDTO;
 
 public interface ProductService {
+
 	List<Product> getProductByType(ProductType type);
 
 	List<Product> findAllProduct();
@@ -26,4 +27,5 @@ public interface ProductService {
 	List<ProductDTO> getProductsByType(ProductType type);
 
 	ProductDTO getProductsById(String id);
+
 }

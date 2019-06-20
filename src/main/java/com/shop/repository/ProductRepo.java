@@ -16,5 +16,6 @@ public interface ProductRepo extends JpaRepository<Product, String> {
 	List<Product> getProductsByType(ProductType type);
 
 	@Query("SELECT p FROM Product p WHERE p.id = ?1")
-	List<Product> getProductsById(String id);
+	Product getProductsById(String id);
+
 }
