@@ -24,8 +24,8 @@
 	</nav>
 
 	<div id="content">
-		<h1>Welcome to our shop</h1>
-		<h4>The best shop in the entire world</h4>
+		<h3>Thank you! Your order has been registered and the products will be delivered soon</h3>
+		
 	</div>
 
 	<footer>

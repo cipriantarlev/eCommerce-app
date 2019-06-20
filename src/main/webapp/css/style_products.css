@@ -34,6 +34,60 @@ nav a:hover{
 	color:#fff;
 }
 
+#continue {
+	text-decoration: none;
+	color: #000000;
+	font-size: 1.3em;
+	font-family: "calibri";
+	font-weight: bold;
+	display: inline-block;
+	background-color: #c0c0c0;
+	position: relative;
+  	left: 25%;
+  	bottom: 120px;
+}
+
+#continue:hover{
+	background: #c0c0c0;
+	color:#fff;
+}
+
+#checkout {
+	text-decoration: none;
+	color: #000000;
+	font-size: 1.3em;
+	font-family: "calibri";
+	font-weight: bold;
+	display: inline-block;
+	background-color: #c0c0c0;
+	position: relative;
+  	left: 37%;
+  	bottom: 120px;
+}
+
+#checkout:hover{
+	background: #c0c0c0;
+	color:#fff;
+}
+
+#remove {
+	text-decoration: none;
+	color: #000000;
+	background: #D3D3D3;
+	border: 0;
+	font-size: 1em;
+	border-style: outset;
+	display: inline-block;
+	font-weight: bold;
+}
+
+#remove:hover{
+	background: #c0c0c0;
+	color:#fff;
+}
+
+
+
 #welcome{
 	text-decoration: none;
 	color: #fff;

@@ -46,7 +46,7 @@
 			<a href="#">Privacy</a> <a href="#">Contact us</a>
 		</div>
 
-		<div class="footerRight">All rights Reserver &copy 2019</div>
+		<div class="footerRight">All rights Reserved &copy 2019</div>
 	</footer>
 
 </body>

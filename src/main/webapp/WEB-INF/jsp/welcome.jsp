@@ -30,7 +30,7 @@
 		</div>
 
 		<div class="footerRight">
-			All rights Reserver &copy 2019
+			All rights Reserved &copy 2019
 		</div>
 	</footer>
 </body>
