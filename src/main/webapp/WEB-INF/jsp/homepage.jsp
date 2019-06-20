@@ -13,6 +13,9 @@
 			<li><a href="/homepage">Home</a></li>
 			<li><a href="#">About</a></li>
 			<li><a href="/product">Our Products</a></li>
+			<sec:authorize access="hasRole('ADMIN')">
+			<li><a href="/admin">Admin</a></li>
+			</sec:authorize>
 			<li style="float: right;">
 				<form action="logout" method="post">
 					<input type="submit" value="Sign out" /> <input type="hidden"

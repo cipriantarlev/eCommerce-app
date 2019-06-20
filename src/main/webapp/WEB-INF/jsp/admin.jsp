@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Products</title>
+<title>Admin</title>
 <link rel="stylesheet" href="/css/style_products.css" type="text/css" />
 </head>
 <body>
@@ -16,9 +16,6 @@
 			<li><a href="/homepage">Home</a></li>
 			<li><a href="#">About</a></li>
 			<li><a href="/product">Our Products</a></li>
-			<sec:authorize access="hasRole('ADMIN')">
-			<li><a href="/admin">Admin</a></li>
-			</sec:authorize>
 			<li style="float: right;">
 				<form action="logout" method="post">
 					<input type="submit" value="Sign out" /> <input type="hidden"
@@ -38,7 +35,6 @@
 				<th style="width: 25%">Type</th>
 				<th>Price</th>
 				<th>Stock</th>
-				<th>Buy</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -49,9 +45,7 @@
 					<td>${product.type}</td>
 					<td>${product.price} RON</td>
 					<td>${product.stoc}</td>
-					<td align="center">
-					<a id="remove" href="${pageContext.request.contextPath }/cart/buy/${product.id}">Buy Now</a>
-				</td>
+					
 				</tr>
 			</c:forEach>
 		</tbody>

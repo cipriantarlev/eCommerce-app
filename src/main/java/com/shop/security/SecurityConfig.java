@@ -19,9 +19,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	@Autowired
 	private DataSource datasource;
 
-//	@Autowired
-//	private BCryptPasswordEncoder brcyptEncoder;
-
 	@Autowired
 	public void conifureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		auth.jdbcAuthentication()
@@ -32,6 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http
 			.authorizeRequests()
 			.antMatchers("/homepage/**").hasRole("USER")
+				.antMatchers("/admin/**").hasRole("ADMIN")
 				.and()
 			.formLogin()
 			.loginPage("/login")
