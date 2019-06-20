@@ -14,14 +14,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.shop.domain.model.Item;
 import com.shop.service.ProductService;
 
-
 @Controller
 @RequestMapping(value = "cart")
 public class CartController {
 
 	@Autowired
 	ProductService productModel;
-
 
 	@RequestMapping(value = "index", method = RequestMethod.GET)
 	public String index() {
@@ -67,4 +65,5 @@ public class CartController {
 	}
 
 }
+
 
