@@ -10,11 +10,12 @@ import com.shop.domain.Product;
 import com.shop.domain.enums.ProductType;
 
 @Repository
-public interface ProductRepo extends JpaRepository<Product, Long> {
+public interface ProductRepo extends JpaRepository<Product, String> {
 
 	@Query("SELECT p FROM Product p WHERE p.type = ?1")
 	List<Product> getProductsByType(ProductType type);
 
 	@Query("SELECT p FROM Product p WHERE p.id = ?1")
 	Product getProductsById(String id);
+
 }
