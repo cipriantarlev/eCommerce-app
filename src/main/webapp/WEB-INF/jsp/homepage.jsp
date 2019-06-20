@@ -12,7 +12,7 @@
 		<ul>
 			<li><a href="/homepage">Home</a></li>
 			<li><a href="#">About</a></li>
-			<li><a href="/homepage-products">Our Products</a></li>
+			<li><a href="/product">Our Products</a></li>
 			<li style="float: right;">
 				<form action="logout" method="post">
 					<input type="submit" value="Sign out" /> <input type="hidden"

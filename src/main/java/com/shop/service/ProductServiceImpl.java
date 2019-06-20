@@ -36,7 +36,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public Product findProductById(Long id) {
+	public Product findProductById(String id) {
 		return productRepo.findById(id).get();
 	}
 
@@ -51,7 +51,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public void deleteProductById(Long id) {
+	public void deleteProductById(String id) {
 		productRepo.deleteById(id);
 	}
 
@@ -63,13 +63,22 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public List<ProductDTO> getAllProducts() {
-		return productRepo.findAll().stream().map(productEntityToDTOMapper::convert).collect(Collectors.toList());
+		return productRepo.findAll()
+						  .stream()
+						  .map(productEntityToDTOMapper::convert)
+						  .collect(Collectors.toList());
 	}
 
 	@Override
 	public List<ProductDTO> getProductsByType(ProductType type) {
-		return productRepo.getProductsByType(type).stream().map(productEntityToDTOMapper::convert)
-				.collect(Collectors.toList());
+		return productRepo.getProductsByType(type)
+						  .stream()
+						  .map(productEntityToDTOMapper::convert)
+						  .collect(Collectors.toList());
+	}
+	
+	public ProductDTO getProductsById(String id) {
+		return productRepo.findById(id).map(productEntityToDTOMapper::convert).get();
 	}
 
 }

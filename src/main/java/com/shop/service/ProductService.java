@@ -11,17 +11,19 @@ public interface ProductService {
 
 	List<Product> findAllProduct();
 
-	Product findProductById(Long id);
+	Product findProductById(String id);
 
 	Product updateProduct(Product product);
 
 	Product insertProduct(Product product);
 
-	void deleteProductById(Long id);
+	void deleteProductById(String id);
 
 	void createProduct(ProductDTO product);
 
 	List<ProductDTO> getAllProducts();
 
 	List<ProductDTO> getProductsByType(ProductType type);
+
+	ProductDTO getProductsById(String id);
 }
