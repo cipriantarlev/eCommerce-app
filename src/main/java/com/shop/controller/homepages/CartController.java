@@ -64,7 +64,9 @@ public class CartController {
 		return -1;
 	}
 
+	@RequestMapping(value="logout",method=RequestMethod.POST)
+	public String showLoginPage() {
+		return "redirect:/login?logout";
+	}
+
 }
-
-
-

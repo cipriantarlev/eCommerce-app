@@ -15,13 +15,14 @@
 		<ul>
 			<li><a href="/homepage">Home</a></li>
 			<li><a href="#">About</a></li>
-			<li><a href="/homepage-products">Our Products</a></li>
+			<li><a href="/product">Our Products</a></li>
 			<li style="float: right;">
 				<form action="logout" method="post">
 					<input type="submit" value="Sign out" /> <input type="hidden"
 						name="${_csrf.parameterName}" value="${_csrf.token}" />
 				</form>
 			</li>
+			<li style="float: right;"><a href="/cart/index">Cart</a></li>
 			<li id="welcome" style="float: right;">Welcome, <b><sec:authentication
 						property="principal.username" /></b></li>
 		</ul>
@@ -46,7 +47,7 @@
 					<td>${product.price} RON</td>
 					<td>${product.stoc}</td>
 					<td align="center">
-					<a href="${pageContext.request.contextPath }/cart/buy/${product.id}">Buy Now</a>
+					<a id="remove" href="${pageContext.request.contextPath }/cart/buy/${product.id}">Buy Now</a>
 				</td>
 				</tr>
 			</c:forEach>

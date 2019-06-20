@@ -66,7 +66,7 @@
 	<a id="continue" href="${pageContext.request.contextPath }/product">>>> Continue
 		Shopping >>></a>
 
-	<a id="checkout" href="${pageContext.request.contextPath }/checkout">>>> Check Out >>></a>
+	<a id="checkout" href="/checkout">>>> Check Out >>></a>
 
 	<footer>
 		<div class="footerLeft">
