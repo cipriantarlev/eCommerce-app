@@ -28,4 +28,5 @@ public interface ProductService {
 
 	ProductDTO getProductsById(String id);
 
+	void deleteProductDTO(String id);
 }

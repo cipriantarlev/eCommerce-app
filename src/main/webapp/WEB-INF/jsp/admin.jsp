@@ -35,6 +35,8 @@
 				<th style="width: 25%">Type</th>
 				<th>Price</th>
 				<th>Stock</th>
+				<th>Delete</th>
+				<th>Edit</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -45,7 +47,8 @@
 					<td>${product.type}</td>
 					<td>${product.price} RON</td>
 					<td>${product.stoc}</td>
-					
+					<td><a href="/delete-product?id=${product.id}"><img id="image" alt="delete" src="/css/delete1.jpg"></a></td>
+					<td><a href="/update-product?id=${product.id}"><img id="edit" alt="delete" src="/css/edit.png"></a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
