@@ -11,7 +11,7 @@
 	<nav>
 		<ul>
 			<li><a href="/">Home</a></li>
-			<li><a href="#">About</a></li>
+			<li><a href="/about">About</a></li>
 			<li><a href="/products">Our Products</a></li>
 			<li style="float: right;"><a href="/register">Register</a></li>
 			<li style="float: right;"><a href="/login">Sign in</a></li>
@@ -19,7 +19,7 @@
 	</nav>
 
 	<div id="content">
-		<h3>Thank you! Your message has been sent and we will contact you soon</h3>
+		<h3>Thank you! Your message has been sent and we will contact you soon!</h3>
 		
 	</div>
 	

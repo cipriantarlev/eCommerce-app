@@ -11,7 +11,7 @@
 	<nav>
 		<ul>
 			<li><a href="/">Home</a></li>
-			<li><a href="#">About</a></li>
+			<li><a href="/about">About</a></li>
 			<li><a href="/products">Our Products</a></li>
 			<li style="float: right;"><a href="/register">Register</a></li>
 			<li style="float: right;"><a href="/login">Sign in</a></li>
@@ -34,8 +34,6 @@
 <h3>Information Collection And Use</h3>
 
 <p>We collect several different types of information for various purposes to provide and improve our Service to you.</p>
-
-<h4>Types of Data Collected</h4>
 
 <h4>Personal Data</h4>
 

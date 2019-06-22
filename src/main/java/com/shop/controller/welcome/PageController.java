@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class FooterController {
+public class PageController {
 
 	@RequestMapping(value = "/contact", method = RequestMethod.GET)
 	public String showContactPage() {
@@ -35,6 +35,16 @@ public class FooterController {
 	@RequestMapping(value = "/home-privacy", method = RequestMethod.GET)
 	public String showPrivacyHomePage() {
 		return "privacyhome";
+	}
+
+	@RequestMapping(value = "/about", method = RequestMethod.GET)
+	public String showAboutPage() {
+		return "aboutus";
+	}
+
+	@RequestMapping(value = "/home-about", method = RequestMethod.GET)
+	public String showHomeAboutPage() {
+		return "aboutushome";
 	}
 
 }

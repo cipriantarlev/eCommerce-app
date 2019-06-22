@@ -11,7 +11,7 @@
 	<nav>
 		<ul>
 			<li><a href="/homepage">Home</a></li>
-			<li><a href="#">About</a></li>
+			<li><a href="/home-about">About</a></li>
 			<li><a href="/product">Our Products</a></li>
 			<sec:authorize access="hasRole('ADMIN')">
 			<li><a href="/admin">Admin</a></li>
@@ -42,8 +42,6 @@
 <h3>Information Collection And Use</h3>
 
 <p>We collect several different types of information for various purposes to provide and improve our Service to you.</p>
-
-<h4>Types of Data Collected</h4>
 
 <h4>Personal Data</h4>
 
