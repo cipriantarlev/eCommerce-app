@@ -27,8 +27,8 @@
 	</nav>
 
 	<div id="content">
-		<h1>Welcome to our shop</h1>
-		<h4>The best shop in the entire world</h4>
+		<h3>Thank you! Your message has been sent and we will contact you soon</h3>
+		
 	</div>
 
 	<footer>

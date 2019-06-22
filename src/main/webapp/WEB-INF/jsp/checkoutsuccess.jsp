@@ -30,7 +30,8 @@
 
 	<footer>
 		<div class="footerLeft">
-			<a href="#">Privacy</a> <a href="#">Contact us</a>
+			<a href="/home-privacy">Privacy</a>
+			<a href="/home-contact">Contact us</a>
 		</div>
 
 		<div class="footerRight">All rights Reserved &copy 2019</div>

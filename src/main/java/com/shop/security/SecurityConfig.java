@@ -35,7 +35,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			.loginPage("/login")
 			.defaultSuccessUrl("/homepage", true)
 			.and()
-			.httpBasic();
+				.exceptionHandling().accessDeniedPage("/forbidden");
+		// .httpBasic();
 	}
 
 	@Bean
