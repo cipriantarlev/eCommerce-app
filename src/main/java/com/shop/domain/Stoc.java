@@ -1,6 +1,8 @@
 package com.shop.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
@@ -19,11 +21,12 @@ import lombok.NoArgsConstructor;
 public class Stoc {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
 	private Integer stoc;
-	
-	@OneToOne(mappedBy="stoc")
+
+	@OneToOne(mappedBy = "stoc")
 	@JsonIgnore
 	private Product prodcut;
 }

@@ -14,7 +14,7 @@ public interface ProductService {
 
 	Product findProductById(String id);
 
-	Product updateProduct(Product product);
+	void updateProduct(String productId, ProductDTO product);
 
 	Product insertProduct(Product product);
 
@@ -29,4 +29,5 @@ public interface ProductService {
 	ProductDTO getProductsById(String id);
 
 	void deleteProductDTO(String id);
+
 }

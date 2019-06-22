@@ -3,10 +3,13 @@ package com.shop.domain;
 
 import java.math.BigDecimal;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
@@ -27,6 +30,7 @@ import lombok.NoArgsConstructor;
 public class Product {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String id;
 	
 	@Column(name = "name")
@@ -41,7 +45,7 @@ public class Product {
 	@Lob
 	private byte[] image;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "stoc_id")
 	private Stoc stoc;
 }

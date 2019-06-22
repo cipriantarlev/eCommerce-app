@@ -32,7 +32,7 @@
 		<caption>Your Cart</caption>
 		<tr>
 			<th>Option</th>
-			<th>Id</th>
+<!-- 			<th>Id</th> -->
 			<th>Name</th>
 			<th>Price</th>
 			<th>Stoc</th>
@@ -48,7 +48,7 @@
 				<td align="center"><a id="remove"
 					href="${pageContext.request.contextPath }/cart/remove/${item.product.id }"
 					onclick="return confirm('Are you sure?')">Remove</a></td>
-				<td>${item.product.id }</td>
+<%-- 				<td>${item.product.id }</td> --%>
 				<td>${item.product.name }</td>
 				<td>${item.product.price }</td>
 				<td>${item.product.stoc }</td>

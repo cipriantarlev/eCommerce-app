@@ -33,7 +33,7 @@
 	<table align="center">
 		<caption>Our Products</caption>
 		<thead>
-			<tr><th>Id</th>
+			<tr><!--  <th>Id</th>-->
 				<th style="width: 50%">Name</th>
 				<th style="width: 25%">Type</th>
 				<th>Price</th>
@@ -44,7 +44,7 @@
 		<tbody>
 			<c:forEach items="${products}" var="product">
 				<tr>
-					<td>${product.id}</td>
+<%-- 					<td>${product.id}</td> --%>
 					<td>${product.name}</td>
 					<td>${product.type}</td>
 					<td>${product.price} RON</td>

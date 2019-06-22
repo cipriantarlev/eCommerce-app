@@ -48,11 +48,13 @@
 					<td>${product.price} RON</td>
 					<td>${product.stoc}</td>
 					<td><a href="/delete-product?id=${product.id}"><img id="image" alt="delete" src="/css/delete1.jpg"></a></td>
-					<td><a href="/update-product?id=${product.id}"><img id="edit" alt="delete" src="/css/edit.png"></a></td>
+					<td><a href="/update-product?id=${product.id}"><img id="edit" alt="edit" src="/css/edit.png"></a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
+	
+	<a id="add" href="${pageContext.request.contextPath }/add-product">Add Product</a>
 
 	<footer>
 		<div class="footerLeft">

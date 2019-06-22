@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
+	<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,21 +26,20 @@
 						property="principal.username" /></b></li>
 		</ul>
 	</nav>
-	<div class="addressbar" style="height: 410px">
-		<h1>Order Form</h1>
-		<form action="/checkoutsuccess">
-			<p>First name:</p>
-			<input type="text" name="firstname" placeholder="Enter First name">
-			<p>Last name:</p>
-			<input type="text" name="lastname" placeholder="Enter Last name">
-			<p>City:</p>
-			<input type="text" name="city" placeholder="Enter City">
-			<p>Street (including zip code):</p>
-			<input type="text" name="street" placeholder="Enter Street">
-			<p>Phone number:</p>
-			<input type="text" name="street" placeholder="Enter Phone number">
-			<input type="submit" value="Submit">
-		</form>
+	<div class="addressbar" style="height: 370px">
+		<h1>Add Product</h1>
+		<form:form action="/create-product" method="post" modelAttribute="product">
+			<form:input type="hidden" path="id"/>
+			<p>Name:</p>
+			<form:input type="text" path="name" placeholder="Enter Product Name" required="required"/>
+			<p>Type:</p>
+			<form:input type="text" path="type" placeholder="Enter Product Type" required="required"/>
+			<p>Price:</p>
+			<form:input type="text" path="price" placeholder="Enter Product Price" required="required"/>
+			<p>Stoc:</p>
+			<form:input type="text" path="stoc" placeholder="Enter Product Stoc" required="required"/>
+			<input type="submit" value="Submit"/>
+		</form:form>
 	</div>
 	<footer>
 		<div class="footerLeft">

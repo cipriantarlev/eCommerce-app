@@ -43,11 +43,30 @@ nav a:hover {
 	display: inline-block;
 	background-color: #c0c0c0;
 	position: relative;
-	left: 28%;
+	left: 30%;
 	bottom: 120px;
 }
 
 #continue:hover {
+	background: #c0c0c0;
+	color: #fff;
+}
+
+#add{
+	text-decoration: none;
+	color: #000000;
+	font-size: 1.3em;
+	font-family: "calibri";
+	font-weight: bold;
+	display: inline-block;
+	background-color: #c0c0c0;
+	position: relative;
+	left: 70%;
+	bottom: 120px;
+	
+}
+
+#add:hover {
 	background: #c0c0c0;
 	color: #fff;
 }

@@ -1,7 +1,10 @@
 package com.shop.service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
+
+import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,9 +45,21 @@ public class ProductServiceImpl implements ProductService {
 		return productRepo.findById(id).get();
 	}
 
-	@Override
-	public Product updateProduct(Product product) {
-		return productRepo.save(product);
+	@Transactional
+	public void updateProduct(String productId, ProductDTO productDTO) {
+		Optional<Product> optProduct = productRepo.findById(productId);
+		Product product;
+		if (optProduct.isPresent()) {
+			product = optProduct.get();
+		} else {
+			throw new RuntimeException("The id of the product is not in database!");
+		}
+		product.setName(productDTO.getName());
+//		
+//		Product product = productDTOToEntityMapper.convert(productDTO);
+//		Product savedProduct = productRepo.save(product);
+//
+//		return productEntityToDTOMapper.convert(product);
 	}
 
 	@Override
@@ -60,29 +75,21 @@ public class ProductServiceImpl implements ProductService {
 	public void createProduct(ProductDTO productDTO) {
 		Product product = productDTOToEntityMapper.convert(productDTO);
 		productRepo.save(product);
-
 	}
 
 	@Override
 	public List<ProductDTO> getAllProducts() {
-		return productRepo.findAll()
-						  .stream()
-						  .map(productEntityToDTOMapper::convert)
-						  .collect(Collectors.toList());
+		return productRepo.findAll().stream().map(productEntityToDTOMapper::convert).collect(Collectors.toList());
 	}
 
 	@Override
 	public List<ProductDTO> getProductsByType(ProductType type) {
-		return productRepo.getProductsByType(type)
-						  .stream()
-						  .map(productEntityToDTOMapper::convert)
-						  .collect(Collectors.toList());
+		return productRepo.getProductsByType(type).stream().map(productEntityToDTOMapper::convert)
+				.collect(Collectors.toList());
 	}
-	
+
 	public ProductDTO getProductsById(String id) {
-		return productRepo.findById(id)
-						  .map(productEntityToDTOMapper::convert)
-						  .get();
+		return productRepo.findById(id).map(productEntityToDTOMapper::convert).get();
 	}
 
 	@Override
