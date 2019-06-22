@@ -4,8 +4,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,41 +33,34 @@ public class ProductServiceImpl implements ProductService {
 		return productRepo.getProductsByType(type);
 	}
 
-	@Override
-	public List<Product> findAllProduct() {
-		return productRepo.findAll();
-	}
+//	@Transactional
+//	public void updateProduct(String productId, ProductDTO productDTO) {
+//		Optional<Product> optProduct = productRepo.findById(productId);
+//		Product product;
+//		if (optProduct.isPresent()) {
+//			product = optProduct.get();
+//		} else {
+//			throw new RuntimeException("The id of the product is not in database!");
+//		}
+//		product.setName(productDTO.getName());
+//		product.setType(ProductType.valueOf(productDTO.getType()));
+//		product.setPrice(new BigDecimal(productDTO.getPrice()));
+//		product.setStoc(Stoc.builder().stoc(productDTO.getStoc()).build());
+//
+////		
+////		Product product = productDTOToEntityMapper.convert(productDTO);
+////		Product savedProduct = productRepo.save(product);
+////
+////		return productEntityToDTOMapper.convert(product);
+//	}
 
-	@Override
-	public Product findProductById(String id) {
-		return productRepo.findById(id).get();
-	}
-
-	@Transactional
-	public void updateProduct(String productId, ProductDTO productDTO) {
-		Optional<Product> optProduct = productRepo.findById(productId);
-		Product product;
-		if (optProduct.isPresent()) {
-			product = optProduct.get();
+	public ProductDTO getProductsById(String id) {
+		Optional<ProductDTO> optProductDTO = productRepo.findById(id).map(productEntityToDTOMapper::convert);
+		if (optProductDTO.isPresent()) {
+			return optProductDTO.get();
 		} else {
 			throw new RuntimeException("The id of the product is not in database!");
 		}
-		product.setName(productDTO.getName());
-//		
-//		Product product = productDTOToEntityMapper.convert(productDTO);
-//		Product savedProduct = productRepo.save(product);
-//
-//		return productEntityToDTOMapper.convert(product);
-	}
-
-	@Override
-	public Product insertProduct(Product product) {
-		return productRepo.save(product);
-	}
-
-	@Override
-	public void deleteProductById(String id) {
-		productRepo.deleteById(id);
 	}
 
 	public void createProduct(ProductDTO productDTO) {
@@ -88,9 +79,6 @@ public class ProductServiceImpl implements ProductService {
 				.collect(Collectors.toList());
 	}
 
-	public ProductDTO getProductsById(String id) {
-		return productRepo.findById(id).map(productEntityToDTOMapper::convert).get();
-	}
 
 	@Override
 	public void deleteProductDTO(String id) {

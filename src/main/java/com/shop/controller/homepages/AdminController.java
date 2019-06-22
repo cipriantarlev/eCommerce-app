@@ -7,8 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -33,12 +31,12 @@ public class AdminController {
 		request.setAttribute("products", service.getAllProducts());
 		return "admin";
 	}
-
-	@PutMapping(value = "/update-product") //
-	public String updateProduct(@RequestParam String productId,  @RequestBody ProductDTO productDTO, HttpServletRequest request) {
-		service.updateProduct(productId, productDTO);
-		request.setAttribute("products", service.getAllProducts());
-		return "redirect:/admin";
+	
+	@GetMapping(value = "/update-product")
+	public String editProduct(ModelMap model, @RequestParam String id) {
+		ProductDTO productsDTOById = service.getProductsById(id);
+		model.addAttribute("product", productsDTOById);
+		return "updateProduct";
 	}
 
 	@GetMapping(value = "/add-product")
@@ -53,12 +51,6 @@ public class AdminController {
 		return "addProduct";
 	}
 
-	@GetMapping(value = "/update-product")
-	public String editProduct(ModelMap model) {
-		ProductDTO productDTO = ProductDTO.builder().name("").price("").type("").stoc(0).build();
-		model.addAttribute("product", productDTO);
-		return "addProduct";
-	}
 
 	@PostMapping("/create-product")
 	public String createProduct(ModelMap model, ProductDTO productDTO) {

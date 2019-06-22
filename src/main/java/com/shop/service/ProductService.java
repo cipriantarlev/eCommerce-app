@@ -10,16 +10,6 @@ public interface ProductService {
 
 	List<Product> getProductByType(ProductType type);
 
-	List<Product> findAllProduct();
-
-	Product findProductById(String id);
-
-	void updateProduct(String productId, ProductDTO product);
-
-	Product insertProduct(Product product);
-
-	void deleteProductById(String id);
-
 	void createProduct(ProductDTO product);
 
 	List<ProductDTO> getAllProducts();
